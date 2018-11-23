@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script Shell pour créer dynamiquement une base de données PostgreSQL
+# Script Shell pour créer dynamiquement une base de données PostgreSQL sous Ubuntu
 
 echo "Création d'un utilisateur PostgreSQL :"
 echo "Nom de l'utilisateur :"
@@ -18,5 +18,6 @@ CREATE DATABASE $dbname;
 ALTER DATABASE $dbname OWNER TO $user;
 EOF
 
+# Exécute des requêtes SQL contenues dans un fichier .sql
 echo "Création des tables de la BDD :"
 psql -h localhost -U $user -d $dbname < visiteur.sql
